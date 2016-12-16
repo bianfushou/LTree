@@ -1,0 +1,21 @@
+#include "openglfuntion.h"
+
+OpenGLFunction::OpenGLFunction()
+{
+    OpenGLFunction::f = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>();
+}
+
+QOpenGLFunctions_3_3_Core* OpenGLFunction::getOpenGLFunction()
+{
+    if (f == nullptr)
+    {
+        OpenGLFunction::mutex.lock();
+    	if (f == nullptr)
+    	{
+       		f = new OpenGLFunction();
+    	}
+    	unlock();
+    }
+
+    return instance;
+}

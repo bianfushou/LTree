@@ -1,0 +1,23 @@
+#version 430 core
+
+layout (quads, equal_spacing, ccw) in;
+
+uniform mat4  Model;
+uniform mat4  View;
+uniform mat4  P;
+uniform vec4  center;
+
+#define M_PI		3.14159265358979323846
+
+//----------------------------------------------------------------------------
+
+void main()
+{
+    vec4  pos = vec4( 0.0 );
+    float u = gl_TessCoord.x;
+    float v = gl_TessCoord.y;
+    if(roundEven(y))
+    pos = gl_in[roundEven(x)].gl_Position;
+
+    gl_Position = P*View*Modle * pos;
+}

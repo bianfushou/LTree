@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="1">
+    <root name="D:/Qt/Ltree"/>
+    <defines>
+        <define name="tree"/>
+    </defines>
+    <libraries>
+        <library>qt</library>
+    </libraries>
+</project>
